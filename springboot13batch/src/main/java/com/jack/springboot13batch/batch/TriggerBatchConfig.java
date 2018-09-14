@@ -34,7 +34,7 @@ import javax.sql.DataSource;
  * create by jack 2017/10/28
  * 配置类
  */
-@Configuration
+//@Configuration
 @EnableBatchProcessing
 public class TriggerBatchConfig {
 

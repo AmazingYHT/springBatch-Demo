@@ -19,18 +19,18 @@ public class DemoController {
     private JobLauncher jobLauncher;
     @Autowired
     private Job importJob;
+
     public JobParameters jobParameters;
 
     @RequestMapping("/imp")
-    public String imp (String fileName)throws Exception{
-        String path = fileName+".csv";
+    public String imp(String fileName) throws Exception {
+        String path = fileName + ".csv";
         jobParameters = new JobParametersBuilder()
-                .addLong("time",System.currentTimeMillis())
-                .addString("input.file.name",path)
+                .addLong("time", System.currentTimeMillis())
+                .addString("input.file.name", path)
                 .toJobParameters();
         jobLauncher.run(importJob, jobParameters);
         return "ok";
     }
-
 }
 
